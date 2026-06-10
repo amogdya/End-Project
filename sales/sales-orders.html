@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Orders</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sales.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                 <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                     <span>SerGiez</span>
+                </div>
+                <button type="button" class="sidebar-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="../index/index.html"><i class="fa-solid fa-gauge"></i><span class="link-text"> Dashboard</span></a></li>
+                <li class="menu-item active">
+                    <a href="#" class="menu-toggle" data-toggle="salesMenu"><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span><i class="fa-solid fa-chevron-down submenu-icon"></i></a>
+                    <ul class="sidebar-submenu" id="salesMenu" style="display: block;">
+                        <li class="active"><a href="sales-orders.html"><i class="fa-solid fa-list"></i><span class="link-text"> View Orders</span></a></li>
+                        <li><a href="sales-create.html"><i class="fa-solid fa-plus"></i><span class="link-text"> Create Order</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="../product/inventory.html"><i class="fa-solid fa-tags"></i><span class="link-text"> Product & Inventory</span></a></li>
+                <li><a href="../invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i><span class="link-text"> Invoices & Billing</span></a></li>
+                <li><a href="../contacts/contacts.html"><i class="fa-solid fa-address-book"></i><span class="link-text"> Contacts & Leads</span></a></li>
+                <li><a href="../reports/reports.html"><i class="fa-solid fa-chart-pie"></i><span class="link-text"> Reports & Analytics</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer"><p>&copy; 2026 SalesOps Inc.</p></div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <button type="button" class="sidebar-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="../c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <!-- Row 1: Header & Quick Actions -->
+            <div class="dashboard-title-row">
+                <h2>View Orders</h2>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-action"><i class="fa-solid fa-file-export"></i> Export to Excel/PDF</button>
+                    <a href="sales-create.html" class="btn-primary"><i class="fa-solid fa-plus"></i><span class="link-text"> Create New Order</span></a>
+                </div>
+            </div>
+
+            <!-- Row 2: Metric Cards -->
+            <div class="kpi-grid" id="salesKPIContainer">
+                <!-- Sales KPI cards will be populated by JavaScript -->
+            </div>
+
+            <!-- Row 3 & 4: Filters and Table -->
+            <div class="panel">
+                <div class="toolbar">
+                    <div style="flex-grow: 1; min-width: 250px; position: relative;">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; top: 10px; color: var(--text-muted);"></i>
+                        <input type="text" placeholder="Search by Order ID, Customer Name, or Email..." style="width: 100%; padding-left: 30px;">
+                    </div>
+                    <input type="date" title="Start Date">
+                    <span style="align-self: center; color: var(--text-muted);">to</span>
+                    <input type="date" title="End Date">
+                    <select>
+                        <option value="">All Statuses</option>
+                        <option value="draft">Draft</option>
+                        <option value="processing">Processing</option>
+                        <option value="shipped">Shipped</option>
+                        <option value="delivered">Delivered</option>
+                        <option value="cancelled">Cancelled</option>
+                    </select>
+                    <select>
+                        <option value="">Payment Status</option>
+                        <option value="paid">Paid</option>
+                        <option value="unpaid">Unpaid</option>
+                        <option value="partial">Partial</option>
+                    </select>
+                    <select>
+                        <option value="">Sales Rep</option>
+                        <option value="alex">Alex Mercer</option>
+                        <option value="sarah">Sarah Jenkins</option>
+                        <option value="sergie">Sergie Gomez</option>
+                    </select>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Date</th>
+                                <th>Customer Name</th>
+                                <th>Total Amount</th>
+                                <th>Payment Status</th>
+                                <th>Fulfillment Status</th>
+                                <th>Sales Rep</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="salesOrdersTableBody">
+                            <!-- Sales orders will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data and rendering scripts -->
+    <script src="sales-data.js"></script>
+    <script src="sales.js"></script>
+    <script src="../js/sidebar-toggle.js"></script>
+    <script src="../js/submenu-toggle.js"></script>
+</body>
+</html>
