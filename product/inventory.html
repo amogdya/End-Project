@@ -10,17 +10,20 @@
 <body>
     <div class="sidebar">
         <div>
-            <div class="sidebar-brand">
-             <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
-                 <span>SerGiez</span>
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                 <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                     <span>SerGiez</span>
+                </div>
+                <button type="button" class="sidebar-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <ul class="sidebar-menu">
-                <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
-                <li><a href="/End Project/product/inventory.html" class="active" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
-                <li><a href="/End Project/invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
-                <li><a href="/End Project/contacts/contacts.html"><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
-                <li><a href="/End Project/reports/reports.html"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+                <li><a href="../index/index.html" ><i class="fa-solid fa-gauge"></i><span class="link-text"> Dashboard</span></a></li>
+                <li><a href="../sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span></a></li>
+                <li><a href="inventory.html" class="active" ><i class="fa-solid fa-tags"></i><span class="link-text"> Product & Inventory</span></a></li>
+                <li><a href="../invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i><span class="link-text"> Invoices & Billing</span></a></li>
+                <li><a href="../contacts/contacts.html"><i class="fa-solid fa-address-book"></i><span class="link-text"> Contacts & Leads</span></a></li>
+                <li><a href="../reports/reports.html"><i class="fa-solid fa-chart-pie"></i><span class="link-text"> Reports & Analytics</span></a></li>
             </ul>
         </div>
         <div class="sidebar-footer"><p>&copy; 2026 SalesOps Inc.</p></div>
@@ -28,14 +31,14 @@
 
     <div class="main-content">
         <div class="header">
-            <div></div> <!-- Spacer -->
+            <button type="button" class="sidebar-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
             <div class="user-profile">
                 <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
                 <div style="text-align: right;">
                     <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
                     <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
                 </div>
-                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+                <img src="../c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
             </div>
         </div>
 
@@ -45,7 +48,7 @@
                 <h2>Products & Inventory</h2>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn-action"><i class="fa-solid fa-file-import"></i> Import / Export</button>
-                    <a class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Product</a>
+                    <a class="btn-primary"><i class="fa-solid fa-plus"></i><span class="link-text"> Add New Product</span></a>
                 </div>
             </div>
 
@@ -126,5 +129,8 @@
     <!-- Data and rendering scripts -->
     <script src="inventory-data.js"></script>
     <script src="inventory.js"></script>
+    <script src="../js/sidebar-toggle.js"></script>
 </body>
 </html>
+
+

@@ -13,17 +13,20 @@
     <!-- SIDEBAR -->
     <div class="sidebar">
         <div>
-            <div class="sidebar-brand">
-                <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
-                <span>SerGiez</span>
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                    <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                    <span>SerGiez</span>
+                </div>
+                <button type="button" class="sidebar-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
             </div>
             <ul class="sidebar-menu">
-                   <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
-                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
-                <li><a href="/End Project/product/inventory.html" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
-                <li><a href="/End Project/invoice/invoice.html" ><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
-                <li><a href="/End Project/contacts/contacts.html" ><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
-                <li><a href="/End Project/reports/reports.html" class="active"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+                   <li><a href="../index/index.html" ><i class="fa-solid fa-gauge"></i><span class="link-text"> Dashboard</span></a></li>
+                <li><a href="../sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span></a></li>
+                <li><a href="../product/inventory.html" ><i class="fa-solid fa-tags"></i><span class="link-text"> Product & Inventory</span></a></li>
+                <li><a href="../invoice/invoice.html" ><i class="fa-solid fa-file-invoice-dollar"></i><span class="link-text"> Invoices & Billing</span></a></li>
+                <li><a href="../contacts/contacts.html" ><i class="fa-solid fa-address-book"></i><span class="link-text"> Contacts & Leads</span></a></li>
+                <li><a href="reports.html" class="active"><i class="fa-solid fa-chart-pie"></i><span class="link-text"> Reports & Analytics</span></a></li>
         </div>
         <div class="sidebar-footer">
             <p>&copy; 2026 SalesOps Inc.</p>
@@ -35,6 +38,7 @@
         
         <!-- Header -->
         <div class="header">
+            <button type="button" class="sidebar-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
             <div class="search-bar">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" placeholder="Search parameters, data insights...">
@@ -45,7 +49,7 @@
                     <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
                     <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
                 </div>
-                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile">
+                <img src="../c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile">
             </div>
         </div>
 
@@ -135,5 +139,8 @@
     <!-- Data and rendering scripts -->
     <script src="reports-data.js"></script>
     <script src="reports.js"></script>
+    <script src="../js/sidebar-toggle.js"></script>
 </body>
 </html>
+
+

@@ -2,7 +2,7 @@
 const inventoryData = [
     {
         id: 1,
-        image: "/End Project/720456639_1304434938070801_4766389650334708975_n.jpg",
+        image: "../720456639_1304434938070801_4766389650334708975_n.jpg",
         sku: "SKU-AP001",
         name: "Basic Grey V-Neck T-Shirt",
         category: "Apparel",
@@ -13,7 +13,7 @@ const inventoryData = [
     },
     {
         id: 2,
-        image: "/End Project/720456639_1304434938070801_4766389650334708975_n.jpg",
+        image: "../720456639_1304434938070801_4766389650334708975_n.jpg",
         sku: "SKU-AC002",
         name: "TUP Official Lanyard",
         category: "Accessories",
@@ -24,7 +24,7 @@ const inventoryData = [
     },
     {
         id: 3,
-        image: "/End Project/720456639_1304434938070801_4766389650334708975_n.jpg",
+        image: "../720456639_1304434938070801_4766389650334708975_n.jpg",
         sku: "SKU-AP003",
         name: "Slim Fit Black Denim Jeans",
         category: "Apparel",
@@ -35,7 +35,7 @@ const inventoryData = [
     },
     {
         id: 4,
-        image: "/End Project/720456639_1304434938070801_4766389650334708975_n.jpg",
+        image: "../720456639_1304434938070801_4766389650334708975_n.jpg",
         sku: "SKU-FW004",
         name: "Grey & White Lifestyle Sneakers",
         category: "Footwear",
@@ -46,7 +46,7 @@ const inventoryData = [
     },
     {
         id: 5,
-        image: "/End Project/716169897_1341105404624475_490796859089480813_n.png",
+        image: "../716169897_1341105404624475_490796859089480813_n.png",
         sku: "SKU-AP005",
         name: "Black \"Ishu\" Logo Polo Shirt",
         category: "Apparel",
@@ -57,7 +57,7 @@ const inventoryData = [
     },
     {
         id: 6,
-        image: "/End Project/720281986_1736699650659974_5741202945404579918_n.jpg",
+        image: "../720281986_1736699650659974_5741202945404579918_n.jpg",
         sku: "SKU-AP006",
         name: "White Short-Sleeve Uniform Polo",
         category: "Apparel",
@@ -68,7 +68,7 @@ const inventoryData = [
     },
     {
         id: 7,
-        image: "/End Project/720281986_1736699650659974_5741202945404579918_n.jpg",
+        image: "../720281986_1736699650659974_5741202945404579918_n.jpg",
         sku: "SKU-AP007",
         name: "Classic Black Dress Pants",
         category: "Apparel",
@@ -79,7 +79,7 @@ const inventoryData = [
     },
     {
         id: 8,
-        image: "/End Project/720281986_1736699650659974_5741202945404579918_n.jpg",
+        image: "../720281986_1736699650659974_5741202945404579918_n.jpg",
         sku: "SKU-FW008",
         name: "Black Formal Leather Shoes",
         category: "Footwear",
