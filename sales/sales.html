@@ -19,7 +19,13 @@
             </div>
             <ul class="sidebar-menu">
                 <li><a href="../index/index.html"><i class="fa-solid fa-gauge"></i><span class="link-text"> Dashboard</span></a></li>
-                <li><a href="sales.html" class="active"><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span></a></li>
+                <li class="menu-item">
+                    <a href="#" class="menu-toggle" data-toggle="salesMenu"><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span><i class="fa-solid fa-chevron-down submenu-icon"></i></a>
+                    <ul class="sidebar-submenu" id="salesMenu">
+                        <li><a href="sales-orders.html"><i class="fa-solid fa-list"></i><span class="link-text"> View Orders</span></a></li>
+                        <li><a href="sales-create.html"><i class="fa-solid fa-plus"></i><span class="link-text"> Create Order</span></a></li>
+                    </ul>
+                </li>
                 <li><a href="../product/inventory.html"><i class="fa-solid fa-tags"></i><span class="link-text"> Product & Inventory</span></a></li>
                 <li><a href="../invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i><span class="link-text"> Invoices & Billing</span></a></li>
                 <li><a href="../contacts/contacts.html"><i class="fa-solid fa-address-book"></i><span class="link-text"> Contacts & Leads</span></a></li>
@@ -48,7 +54,7 @@
                 <h2>Sales & Orders</h2>
                 <div style="display: flex; gap: 10px;">
                     <button class="btn-action"><i class="fa-solid fa-file-export"></i> Export to Excel/PDF</button>
-                    <a href="CreateOrder.html" class="btn-primary"><i class="fa-solid fa-plus"></i><span class="link-text"> Create New Order</span></a>
+                    <a href="sales-create.html" class="btn-primary"><i class="fa-solid fa-plus"></i><span class="link-text"> Create New Order</span></a>
                 </div>
             </div>
 
@@ -116,7 +122,6 @@
     <script src="sales-data.js"></script>
     <script src="sales.js"></script>
     <script src="../js/sidebar-toggle.js"></script>
+    <script src="../js/submenu-toggle.js"></script>
 </body>
 </html>
-
-
