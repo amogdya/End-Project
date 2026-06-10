@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Order</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sales.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-header">
+                <div class="sidebar-brand">
+                 <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                     <span>SerGiez</span>
+                </div>
+                <button type="button" class="sidebar-close" aria-label="Close menu"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="../index/index.html"><i class="fa-solid fa-gauge"></i><span class="link-text"> Dashboard</span></a></li>
+                <li class="menu-item active">
+                    <a href="#" class="menu-toggle" data-toggle="salesMenu"><i class="fa-solid fa-cart-shopping"></i><span class="link-text"> Sales & Orders</span><i class="fa-solid fa-chevron-down submenu-icon"></i></a>
+                    <ul class="sidebar-submenu" id="salesMenu" style="display: block;">
+                        <li><a href="sales-orders.html"><i class="fa-solid fa-list"></i><span class="link-text"> View Orders</span></a></li>
+                        <li class="active"><a href="sales-create.html"><i class="fa-solid fa-plus"></i><span class="link-text"> Create Order</span></a></li>
+                    </ul>
+                </li>
+                <li><a href="../product/inventory.html"><i class="fa-solid fa-tags"></i><span class="link-text"> Product & Inventory</span></a></li>
+                <li><a href="../invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i><span class="link-text"> Invoices & Billing</span></a></li>
+                <li><a href="../contacts/contacts.html"><i class="fa-solid fa-address-book"></i><span class="link-text"> Contacts & Leads</span></a></li>
+                <li><a href="../reports/reports.html"><i class="fa-solid fa-chart-pie"></i><span class="link-text"> Reports & Analytics</span></a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer"><p>&copy; 2026 SalesOps Inc.</p></div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <button type="button" class="sidebar-toggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="../c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <!-- Row 1: Header -->
+            <div class="dashboard-title-row">
+                <h2>Create New Order</h2>
+                <div style="display: flex; gap: 10px;">
+                    <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-arrow-left"></i> Back to Orders</a>
+                </div>
+            </div>
+
+            <!-- Order Form -->
+            <div class="panel">
+                <form id="createOrderForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px;">
+                    <!-- Customer Information -->
+                    <div style="grid-column: 1 / -1;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Customer Information</h3>
+                    </div>
+
+                    <div>
+                        <label for="customerName">Customer Name *</label>
+                        <input type="text" id="customerName" name="customerName" required placeholder="Enter customer name">
+                    </div>
+
+                    <div>
+                        <label for="customerEmail">Email Address *</label>
+                        <input type="email" id="customerEmail" name="customerEmail" required placeholder="customer@example.com">
+                    </div>
+
+                    <div>
+                        <label for="customerPhone">Phone Number</label>
+                        <input type="tel" id="customerPhone" name="customerPhone" placeholder="(555) 123-4567">
+                    </div>
+
+                    <div>
+                        <label for="customerAddress">Address</label>
+                        <input type="text" id="customerAddress" name="customerAddress" placeholder="Street address">
+                    </div>
+
+                    <!-- Order Details -->
+                    <div style="grid-column: 1 / -1; margin-top: 20px;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Order Details</h3>
+                    </div>
+
+                    <div>
+                        <label for="orderDate">Order Date *</label>
+                        <input type="date" id="orderDate" name="orderDate" required>
+                    </div>
+
+                    <div>
+                        <label for="salesRep">Sales Representative *</label>
+                        <select id="salesRep" name="salesRep" required>
+                            <option value="">-- Select Sales Rep --</option>
+                            <option value="alex">Alex Mercer</option>
+                            <option value="sarah">Sarah Jenkins</option>
+                            <option value="sergie">Sergie Gomez</option>
+                        </select>
+                    </div>
+
+                    <div style="grid-column: 1 / -1;">
+                        <label for="orderNotes">Order Notes</label>
+                        <textarea id="orderNotes" name="orderNotes" placeholder="Add any special instructions or notes..." style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid var(--border-color); border-radius: 5px; font-family: Arial, sans-serif;"></textarea>
+                    </div>
+
+                    <!-- Payment Information -->
+                    <div style="grid-column: 1 / -1; margin-top: 20px;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Payment Information</h3>
+                    </div>
+
+                    <div>
+                        <label for="totalAmount">Total Amount *</label>
+                        <input type="number" id="totalAmount" name="totalAmount" required placeholder="0.00" step="0.01">
+                    </div>
+
+                    <div>
+                        <label for="paymentStatus">Payment Status *</label>
+                        <select id="paymentStatus" name="paymentStatus" required>
+                            <option value="">-- Select Status --</option>
+                            <option value="paid">Paid</option>
+                            <option value="unpaid">Unpaid</option>
+                            <option value="partial">Partial</option>
+                        </select>
+                    </div>
+
+                    <!-- Fulfillment Status -->
+                    <div style="grid-column: 1 / -1; margin-top: 20px;">
+                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Fulfillment Status</h3>
+                    </div>
+
+                    <div>
+                        <label for="fulfillmentStatus">Status *</label>
+                        <select id="fulfillmentStatus" name="fulfillmentStatus" required>
+                            <option value="">-- Select Status --</option>
+                            <option value="draft">Draft</option>
+                            <option value="processing">Processing</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="delivered">Delivered</option>
+                            <option value="cancelled">Cancelled</option>
+                        </select>
+                    </div>
+
+                    <!-- Form Actions -->
+                    <div style="grid-column: 1 / -1; margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end;">
+                        <button type="reset" class="btn-action"><i class="fa-solid fa-redo"></i> Clear Form</button>
+                        <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-times"></i> Cancel</a>
+                        <button type="submit" class="btn-primary"><i class="fa-solid fa-save"></i> Create Order</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../js/sidebar-toggle.js"></script>
+    <script src="../js/submenu-toggle.js"></script>
+    <script>
+        document.getElementById('createOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                customerName: document.getElementById('customerName').value,
+                customerEmail: document.getElementById('customerEmail').value,
+                customerPhone: document.getElementById('customerPhone').value,
+                customerAddress: document.getElementById('customerAddress').value,
+                orderDate: document.getElementById('orderDate').value,
+                salesRep: document.getElementById('salesRep').value,
+                orderNotes: document.getElementById('orderNotes').value,
+                totalAmount: parseFloat(document.getElementById('totalAmount').value),
+                paymentStatus: document.getElementById('paymentStatus').value,
+                fulfillmentStatus: document.getElementById('fulfillmentStatus').value
+            };
+            
+            // Save to localStorage
+            let orders = JSON.parse(localStorage.getItem('salesOrders')) || [];
+            const newOrder = {
+                id: 'ORD-' + Date.now(),
+                ...formData,
+                createdAt: new Date().toISOString()
+            };
+            orders.push(newOrder);
+            localStorage.setItem('salesOrders', JSON.stringify(orders));
+            
+            // Show success message and redirect
+            alert('Order created successfully!');
+            window.location.href = 'sales-orders.html';
+        });
+    </script>
+</body>
+</html>
