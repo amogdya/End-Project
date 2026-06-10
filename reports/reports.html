@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports & Analytics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="stylesheet" href="reports.css">
+
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                <span>SerGiez</span>
+            </div>
+            <ul class="sidebar-menu">
+                   <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
+                <li><a href="/End Project/product/inventory.html" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
+                <li><a href="/End Project/invoice/invoice.html" ><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
+                <li><a href="/End Project/contacts/contacts.html" ><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
+                <li><a href="/End Project/reports/reports.html" class="active"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+        </div>
+        <div class="sidebar-footer">
+            <p>&copy; 2026 SalesOps Inc.</p>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main-content">
+        
+        <!-- Header -->
+        <div class="header">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search parameters, data insights...">
+            </div>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile">
+            </div>
+        </div>
+
+        <!-- Dashboard Body Container -->
+        <div class="dashboard-container">
+            
+            <!-- Structural Header Section Block -->
+            <div class="dashboard-header-block">
+                <div>
+                    <h2>Reports & Analytics</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Analyze gross operations efficiency, historical sales trends, and cross-channel pipelines.</p>
+                </div>
+                <div class="btn-group">
+                    <button class="btn-secondary">
+                        <i class="fa-solid fa-calendar-days"></i> Last 30 Days
+                    </button>
+                    <button class="btn-primary">
+                        <i class="fa-solid fa-download"></i> Export Data Report
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytical Structured Grid Layout -->
+            <div class="analytics-summary-grid">
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Gross Revenue</span>
+                        <div class="metric-icon-box"><i class="fa-solid fa-wallet"></i></div>
+                    </div>
+                    <div class="metric-value">$93,420.00</div>
+                    <div class="metric-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i> <span>+12.4% vs last month</span>
+                    </div>
+                </div>
+
+                <div class="metric-card success">
+                    <div class="metric-header">
+                        <span>Conversion Rate</span>
+                        <div class="metric-icon-box"><i class="fa-solid fa-arrow-pointer"></i></div>
+                    </div>
+                    <div class="metric-value">4.28%</div>
+                    <div class="metric-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i> <span>+0.6% variance</span>
+                    </div>
+                </div>
+
+                <div class="metric-card warning">
+                    <div class="metric-header">
+                        <span>Avg Order Value</span>
+                        <div class="metric-icon-box"><i class="fa-solid fa-basket-shopping"></i></div>
+                    </div>
+                    <div class="metric-value">$342.50</div>
+                    <div class="metric-trend trend-down">
+                        <i class="fa-solid fa-arrow-trend-down"></i> <span>-1.8% dropoff</span>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <div class="metric-header">
+                        <span>Active Pipeline</span>
+                        <div class="metric-icon-box"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
+                    </div>
+                    <div class="metric-value">18 Active</div>
+                    <div class="metric-trend trend-up">
+                        <i class="fa-solid fa-arrow-trend-up"></i> <span>4 deals added late</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Column Analytical Layout Row -->
+            <div class="charts-row-grid">
+                
+                <!-- Main Activity Distribution Panel Graph Block -->
+                <div class="panel-chart-container">
+                    <div class="panel-title-area">
+                        <h4>Monthly Financial Performance Overview</h4>
+                        <i class="fa-solid fa-ellipsis" style="color: var(--text-muted); cursor: pointer;"></i>
+                    </div>
+                    <div class="mock-bar-chart">
+                        <!-- Bar Charts Built via CSS Flexbox Heights matching the theme variables -->
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 45%;"></div><div class="bar-label">Jan</div></div>
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 60%;"></div><div class="bar-label">Feb</div></div>
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 52%;"></div><div class="bar-label">Mar</div></div>
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 78%;"></div><div class="bar-label">Apr</div></div>
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 88%;"></div><div class="bar-label">May</div></div>
+                        <div class="bar-wrapper"><div class="bar-growth" style="height: 95%;"></div><div class="bar-label">Jun</div></div>
+                    </div>
+                </div>
+
+                <!-- Secondary Split Distribution Breakdowns Block -->
+                <div class="panel-chart-container">
+                    <div class="panel-title-area">
+                        <h4>Acquisition Split</h4>
+                    </div>
+                    <div class="mock-donut-container">
+                        <div class="donut-graphic">
+                            <div class="donut-center-text">
+                                <span>Total</span>
+                                <h5>24.8k</h5>
+                            </div>
+                        </div>
+                        <div class="donut-legend">
+                            <div class="legend-item"><span class="dot" style="background-color: var(--accent-color);"></span> Direct</div>
+                            <div class="legend-item"><span class="dot" style="background-color: var(--success);"></span> Referral</div>
+                            <div class="legend-item"><span class="dot" style="background-color: var(--warning);"></span> Organic</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Log Table Container (Target High Margin Categories) -->
+            <div class="panel-table-bottom">
+                <div class="panel-title-area" style="margin-bottom: 15px;">
+                    <h4>Top Product Sales Share Performance Metrics</h4>
+                </div>
+                <div style="width: 100%; overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Product / Category SKU</th>
+                                <th>Units Volume Sold</th>
+                                <th>Total Revenue Return</th>
+                                <th>Target Conversion Share</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Enterprise CRM Suite Modules</strong></td>
+                                <td>142 Licenses</td>
+                                <td>$42,600.00</td>
+                                <td>
+                                    <div class="badge-progress-container">
+                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 82%;"></div></div>
+                                        <span>82%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>B2B Operations Optimization Kits</strong></td>
+                                <td>98 Bundles</td>
+                                <td>$29,400.00</td>
+                                <td>
+                                    <div class="badge-progress-container">
+                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 64%; background-color: var(--accent-color);"></div></div>
+                                        <span>64%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><strong>Inventory Middleware API Pipelines</strong></td>
+                                <td>45 Extensions</td>
+                                <td>$13,500.00</td>
+                                <td>
+                                    <div class="badge-progress-container">
+                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 41%; background-color: var(--warning);"></div></div>
+                                        <span>41%</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>

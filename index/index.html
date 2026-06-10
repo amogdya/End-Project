@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+             <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                 <span>SerGiez</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/End Project/index/index.html" class="active"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
+                <li><a href="/End Project/product/inventory.html" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
+                <li><a href="/End Project/invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
+                <li><a href="/End Project/contacts/contacts.html"><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
+                <li><a href="/End Project/reports/reports.html"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+            </ul>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <p>&copy; 2026 SalesOps Inc.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search...">
+            </div>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <!-- Row 1: KPI Cards -->
+            <div class="kpi-grid">
+                <!-- Card 1 -->
+                <div class="kpi-card">
+                    <div class="kpi-details">
+                        <p>Total Revenue</p>
+                        <h3>$124,500</h3>
+                        <div class="kpi-subtext" style="color: var(--success);">
+                            <i class="fa-solid fa-arrow-trend-up"></i> +14.5% vs last month
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-wallet kpi-icon"></i>
+                </div>
+                <!-- Card 2 -->
+                <div class="kpi-card success">
+                    <div class="kpi-details">
+                        <p>New Customers</p>
+                        <h3>842</h3>
+                        <div class="kpi-subtext" style="color: var(--text-muted);">
+                            <i class="fa-solid fa-user-plus"></i> +38 new this week
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-users-rays kpi-icon"></i>
+                </div>
+                <!-- Card 3 -->
+                <div class="kpi-card warning">
+                    <div class="kpi-details">
+                        <p>Pending Orders</p>
+                        <h3>16</h3>
+                        <div style="margin-top: 10px;">
+                            <button class="btn-action">Review</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-box-open kpi-icon"></i>
+                </div>
+                <!-- Card 4 -->
+                <div class="kpi-card danger">
+                    <div class="kpi-details">
+                        <p>Low Stock Alerts</p>
+                        <h3>5 Items</h3>
+                        <div style="margin-top: 10px;">
+                            <button class="btn-action">View Inventory</button>
+                        </div>
+                    </div>
+                    <i class="fa-solid fa-triangle-exclamation kpi-icon"></i>
+                </div>
+            </div>
+
+            <!-- Row 2: Visual Data -->
+            <div class="charts-grid">
+                <!-- Left Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Revenue Overview (Year-to-Date)</h4>
+                        <select class="filter-select">
+                            <option value="monthly" selected>Monthly Breakdown</option>
+                        </select>
+                    </div>
+                    <div class="simple-stats-container">
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-label">Online Sales</span>
+                                <span class="stat-value">$75,000</span>
+                            </div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 60%; background-color: var(--accent-color);"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-label">Retail Stores</span>
+                                <span class="stat-value">$35,000</span>
+                            </div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 28%; background-color: #2e59d9;"></div></div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-info">
+                                <span class="stat-label">Partnerships</span>
+                                <span class="stat-value">$14,500</span>
+                            </div>
+                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 12%; background-color: var(--success);"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">New Customer Conversion</h4>
+                    </div>
+                    <ul class="metric-list">
+                        <li>
+                            <div class="metric-icon" style="background-color: rgba(255, 77, 109, 0.1); color: var(--accent-color);">
+                                <i class="fa-solid fa-envelope-open-text"></i>
+                            </div>
+                            <div class="metric-text">
+                                <strong>1,200</strong>
+                                <span>Initial Contacts</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metric-icon" style="background-color: rgba(28, 200, 138, 0.1); color: var(--success);">
+                                <i class="fa-solid fa-user-check"></i>
+                            </div>
+                            <div class="metric-text">
+                                <strong>800</strong>
+                                <span>New Customers</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metric-icon" style="background-color: rgba(246, 194, 62, 0.1); color: var(--warning);">
+                                <i class="fa-solid fa-file-signature"></i>
+                            </div>
+                            <div class="metric-text">
+                                <strong>400</strong>
+                                <span>Quotes Sent</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="metric-icon" style="background-color: #e2f0fd; color: #2e59d9;">
+                                <i class="fa-solid fa-handshake"></i>
+                            </div>
+                            <div class="metric-text">
+                                <strong>150</strong>
+                                <span>Closed Deals</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Row 3: Actionable Lists -->
+            <div class="lists-grid">
+                <!-- Left Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Recent Orders</h4>
+                    </div>
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Customer Name</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#ORD-8012</td>
+                                    <td>Wayne Enterprises</td>
+                                    <td>$4,500.00</td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8013</td>
+                                    <td>Stark Industries</td>
+                                    <td>$12,000.00</td>
+                                    <td><span class="status-badge processing">Processing</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8014</td>
+                                    <td>Oscorp Inc.</td>
+                                    <td>$850.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8015</td>
+                                    <td>Daily Bugle</td>
+                                    <td>$3,200.00</td>
+                                    <td><span class="status-badge shipped">Shipped</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#ORD-8016</td>
+                                    <td>Goliath National</td>
+                                    <td>$1,150.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <a href="#" class="view-all-link">View All Orders <i class="fa-solid fa-arrow-right" style="margin-left: 5px; font-size: 0.8rem;"></i></a>
+                </div>
+
+                <!-- Right Panel -->
+                <div class="panel">
+                    <div class="panel-header">
+                        <h4 class="panel-title">Tasks & Reminders</h4>
+                    </div>
+                    
+                    <div class="task-input-group">
+                        <input type="text" placeholder="Add a new to-do item...">
+                        <button class="btn-primary" style="padding: 10px 15px;"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+
+                    <div class="task-list">
+                        <label class="task-item">
+                            <input type="checkbox"> Call John Doe regarding quote
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox"> Approve discount for ABC Corp.
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox" checked> Follow up on Q2 projections
+                        </label>
+                        <label class="task-item">
+                            <input type="checkbox"> Review low stock alerts with procurement
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

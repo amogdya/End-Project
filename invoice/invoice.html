@@ -1,0 +1,265 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Invoices & Billings</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="stylesheet" href="invoice.css">
+
+    </head>
+    <body>
+
+        <div class="sidebar">
+            <div>
+                <div class="sidebar-brand">
+                    <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                    <span>SerGiez</span>
+                </div>
+                <ul class="sidebar-menu">
+                   <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
+                <li><a href="/End Project/product/inventory.html" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
+                <li><a href="/End Project/invoice/invoice.html" class="active"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
+                <li><a href="/End Project/contacts/contacts.html" ><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
+                <li><a href="/End Project/reports/reports.html"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-footer">
+                <p>&copy; 2026 SalesOps Inc.</p>
+            </div>
+        </div>
+
+        <div class="main-content">
+            
+            <div class="header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search invoices, clients...">
+                </div>
+                <div class="user-profile">
+                    <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                    <div style="text-align: right;">
+                        <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                        <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                    </div>
+                    <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <div class="dashboard-header-block">
+                    <div>
+                        <h2>Invoices & Billings</h2>
+                        <p style="color: var(--text-muted); font-size: 0.9rem;">Track metrics, open accounts, and process incoming payments.</p>
+                    </div>
+                    <button class="btn-primary">
+                        <i class="fa-solid fa-plus"></i> Create Invoice
+                    </button>
+                </div>
+
+                <div class="kpi-grid">
+                    <div class="kpi-card">
+                        <div class="kpi-details">
+                            <p>Total Outstanding</p>
+                            <h3>$26,480</h3>
+                        </div>
+                        <i class="fa-solid fa-file-invoice kpi-icon"></i>
+                    </div>
+                    <div class="kpi-card success">
+                        <div class="kpi-details">
+                            <p>Paid This Month</p>
+                            <h3>$51,690</h3>
+                        </div>
+                        <i class="fa-solid fa-circle-check kpi-icon"></i>
+                    </div>
+                    <div class="kpi-card warning">
+                        <div class="kpi-details">
+                            <p>Pending Review</p>
+                            <h3>$7,170</h3>
+                        </div>
+                        <i class="fa-solid fa-hourglass-half kpi-icon"></i>
+                    </div>
+                    <div class="kpi-card danger">
+                        <div class="kpi-details">
+                            <p>Overdue Amount</p>
+                            <h3>$5,060</h3>
+                        </div>
+                        <i class="fa-solid fa-circle-exclamation kpi-icon"></i>
+                    </div>
+                </div>
+
+                <div class="filter-row">
+                    <div class="tabs">
+                        <button class="tab-btn active">All Invoices (10)</button>
+                        <button class="tab-btn">Paid</button>
+                        <button class="tab-btn">Pending</button>
+                        <button class="tab-btn">Overdue</button>
+                    </div>
+                    <div>
+                        <button style="background: none; border: 1px solid var(--border-color); padding: 8px 14px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500;">
+                            <i class="fa-solid fa-filter" style="margin-right: 5px; color: var(--text-muted);"></i> Filter By Date
+                        </button>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="data-table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Invoice ID</th>
+                                    <th>Client Name</th>
+                                    <th>Issue Date</th>
+                                    <th>Due Date</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th style="text-align: right;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>#INV-2026-010</strong></td>
+                                    <td>Gekko & Co</td>
+                                    <td>Jun 10, 2026</td>
+                                    <td>Jul 10, 2026</td>
+                                    <td>$3,750.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Send Reminder"><i class="fa-solid fa-paper-plane"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-009</strong></td>
+                                    <td>Halliwell Media</td>
+                                    <td>Jun 09, 2026</td>
+                                    <td>Jul 09, 2026</td>
+                                    <td>$820.00</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-008</strong></td>
+                                    <td>Cyberdyne Systems</td>
+                                    <td>Jun 09, 2026</td>
+                                    <td>Jul 09, 2026</td>
+                                    <td>$4,500.00</td>
+                                    <td><span class="status-badge pending">Pending</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Send Reminder"><i class="fa-solid fa-paper-plane"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-007</strong></td>
+                                    <td>Initech Software</td>
+                                    <td>Jun 06, 2026</td>
+                                    <td>Jul 06, 2026</td>
+                                    <td>$1,960.00</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-006</strong></td>
+                                    <td>Oscorp Industries</td>
+                                    <td>Jun 05, 2026</td>
+                                    <td>Jul 05, 2026</td>
+                                    <td>$5,800.00</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-005</strong></td>
+                                    <td>Soylent Green Co</td>
+                                    <td>Jun 04, 2026</td>
+                                    <td>Jul 04, 2026</td>
+                                    <td>$3,170.00</td>
+                                    <td><span class="status-badge overdue">Overdue</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-003</strong></td>
+                                    <td>Umbrella Corp</td>
+                                    <td>Jun 04, 2026</td>
+                                    <td>Jul 04, 2026</td>
+                                    <td>$12,300.00</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-002</strong></td>
+                                    <td>Tyrell Corporation</td>
+                                    <td>May 10, 2026</td>
+                                    <td>Jun 10, 2026</td>
+                                    <td>$1,890.00</td>
+                                    <td><span class="status-badge overdue">Overdue</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>#INV-2026-001</strong></td>
+                                    <td>Weyland-Yutani</td>
+                                    <td>May 02, 2026</td>
+                                    <td>Jun 02, 2026</td>
+                                    <td>$22,110.00</td>
+                                    <td><span class="status-badge paid">Paid</span></td>
+                                    <td>
+                                        <div class="action-actions" style="justify-content: flex-end;">
+                                            <button class="btn-icon" title="View Detail"><i class="fa-solid fa-eye"></i></button>
+                                            <button class="btn-icon" title="Download PDF"><i class="fa-solid fa-download"></i></button>
+                                            <button class="btn-icon" title="Ellipsis"><i class="fa-solid fa-ellipsis-vertical"></i></button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </body>
+    </html>

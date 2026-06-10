@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products & Inventory</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+             <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                 <span>SerGiez</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
+                <li><a href="/End Project/product/inventory.html" class="active" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
+                <li><a href="/End Project/invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
+                <li><a href="/End Project/contacts/contacts.html"><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
+                <li><a href="/End Project/reports/reports.html"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+            </ul>
+        </div>
+        <div class="sidebar-footer"><p>&copy; 2026 SalesOps Inc.</p></div>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div></div> <!-- Spacer -->
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <!-- Row 1: Header & Quick Actions -->
+            <div class="dashboard-title-row">
+                <h2>Products & Inventory</h2>
+                <div style="display: flex; gap: 10px;">
+                    <button class="btn-action"><i class="fa-solid fa-file-import"></i> Import / Export</button>
+                    <a class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Product</a>
+                </div>
+            </div>
+
+            <!-- Row 2: Inventory Health Cards -->
+            <div class="kpi-grid">
+                <div class="kpi-card primary clickable">
+                    <div class="kpi-details">
+                        <p>Total Products</p>
+                        <h3>454</h3>
+                    </div>
+                    <i class="fa-solid fa-boxes-stacked kpi-icon"></i>
+                </div>
+                <div class="kpi-card warning clickable" title="Filter by Low Stock">
+                    <div class="kpi-details">
+                        <p>Low Stock Alerts</p>
+                        <h3>14</h3>
+                    </div>
+                    <i class="fa-solid fa-triangle-exclamation kpi-icon"></i>
+                </div>
+                <div class="kpi-card danger clickable" title="Filter by Out of Stock">
+                    <div class="kpi-details">
+                        <p>Out of Stock</p>
+                        <h3>4</h3>
+                    </div>
+                    <i class="fa-solid fa-circle-xmark kpi-icon"></i>
+                </div>
+            </div>
+
+            <!-- Row 3 & 4: Filters and Table -->
+            <div class="panel">
+                <div class="toolbar">
+                    <div style="flex-grow: 1; min-width: 250px; position: relative;">
+                        <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 10px; top: 10px; color: var(--text-muted);"></i>
+                        <input type="text" placeholder="Search by Product Name, SKU, or Barcode..." style="width: 100%; padding-left: 30px;">
+                    </div>
+                    <select>
+                        <option value="">All Categories</option>
+                        <option value="apparel">Apparel</option>
+                        <option value="accessories">Accessories</option>
+                        <option value="footwear">Footwear</option>
+                    </select>
+                    <select>
+                        <option value="">Stock Status</option>
+                        <option value="in-stock">In Stock</option>
+                        <option value="low-stock">Low Stock</option>
+                        <option value="out-of-stock">Out of Stock</option>
+                    </select>
+                    <select>
+                        <option value="">Supplier / Vendor</option>
+                        <option value="local-garments">Local Garments Inc.</option>
+                        <option value="tup-merch">TUP Official Merch</option>
+                    </select>
+                </div>
+
+                <div style="overflow-x: auto;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>SKU / Barcode</th>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Unit Price</th>
+                                <th>Stock on Hand</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><img src="/End Project/720456639_1304434938070801_4766389650334708975_n.jpg" alt="Basic Grey V-Neck T-Shirt" class="product-thumb"></td>
+                                <td><strong>SKU-AP001</strong></td>
+                                <td>Basic Grey V-Neck T-Shirt</td>
+                                <td>Apparel</td>
+                                <td>$15.00</td>
+                                <td><span class="badge healthy">145 in stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720456639_1304434938070801_4766389650334708975_n.jpg" alt="TUP Official Lanyard" class="product-thumb"></td>
+                                <td><strong>SKU-AC002</strong></td>
+                                <td>TUP Official Lanyard</td>
+                                <td>Accessories</td>
+                                <td>$5.00</td>
+                                <td><span class="badge low-stock">12 Low Stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720456639_1304434938070801_4766389650334708975_n.jpg" alt="Slim Fit Black Denim Jeans" class="product-thumb"></td>
+                                <td><strong>SKU-AP003</strong></td>
+                                <td>Slim Fit Black Denim Jeans</td>
+                                <td>Apparel</td>
+                                <td>$45.00</td>
+                                <td><span class="badge out-of-stock">0 Out of Stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720456639_1304434938070801_4766389650334708975_n.jpg" alt="Grey & White Sneakers" class="product-thumb"></td>
+                                <td><strong>SKU-FW004</strong></td>
+                                <td>Grey & White Lifestyle Sneakers</td>
+                                <td>Footwear</td>
+                                <td>$60.00</td>
+                                <td><span class="badge healthy">34 in stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <!-- New Products Added Below -->
+                            <tr>
+                                <td><img src="/End Project/716169897_1341105404624475_490796859089480813_n.png" alt="Black Ishu Logo Polo" class="product-thumb"></td>
+                                <td><strong>SKU-AP005</strong></td>
+                                <td>Black "Ishu" Logo Polo Shirt</td>
+                                <td>Apparel</td>
+                                <td>$25.00</td>
+                                <td><span class="badge healthy">80 in stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720281986_1736699650659974_5741202945404579918_n.jpg" alt="White Uniform Polo" class="product-thumb"></td>
+                                <td><strong>SKU-AP006</strong></td>
+                                <td>White Short-Sleeve Uniform Polo</td>
+                                <td>Apparel</td>
+                                <td>$30.00</td>
+                                <td><span class="badge low-stock">8 Low Stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720281986_1736699650659974_5741202945404579918_n.jpg" alt="Classic Black Dress Pants" class="product-thumb"></td>
+                                <td><strong>SKU-AP007</strong></td>
+                                <td>Classic Black Dress Pants</td>
+                                <td>Apparel</td>
+                                <td>$55.00</td>
+                                <td><span class="badge healthy">120 in stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><img src="/End Project/720281986_1736699650659974_5741202945404579918_n.jpg" alt="Black Formal Leather Shoes" class="product-thumb"></td>
+                                <td><strong>SKU-FW008</strong></td>
+                                <td>Black Formal Leather Shoes</td>
+                                <td>Footwear</td>
+                                <td>$85.00</td>
+                                <td><span class="badge out-of-stock">0 Out of Stock</span></td>
+                                <td><span class="badge active">Active</span></td>
+                                <td style="text-align: right; font-size: 1.1rem; color: var(--text-muted);">
+                                    <i class="fa-solid fa-pen" style="margin: 0 5px; cursor:pointer;" title="Edit"></i>
+                                    <i class="fa-solid fa-boxes-packing" style="margin: 0 5px; cursor:pointer;" title="Adjust Stock"></i>
+                                    <i class="fa-solid fa-trash" style="margin: 0 5px; cursor:pointer; color: var(--danger);" title="Delete"></i>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

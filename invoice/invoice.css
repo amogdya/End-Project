@@ -1,0 +1,316 @@
+
+        :root {
+            --bg-primary: white;
+            --bg-sidebar: #d1001f;
+            --text-main: #333333;
+            --text-muted: #888888;
+            --card-bg: #ffffff;
+            --accent-color: #ff4d6d;
+            --success: #1cc88a;
+            --warning: #f6c23e;
+            --danger: #e74a3b;
+            --border-color: #e3e6f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            display: flex;
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* --- SIDEBAR --- */
+        .sidebar {
+            width: 260px;
+            background-color: var(--bg-sidebar);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .sidebar-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding-bottom: 20px;
+            border-bottom: 1px solid black;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+            margin-top: 20px;
+            flex-grow: 1;
+        }
+
+        .sidebar-menu li {
+            margin-bottom: 8px;
+        }
+
+          .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: black;
+            text-decoration: none;
+            padding: 12px 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: var(--accent-color);
+            color: #fff;
+        }
+
+         .sidebar-footer {
+            font-size: 0.85rem;
+            color: white;
+            text-align: center;
+            border-top: 1px solid black;
+            padding-top: 15px;
+        }
+
+        /* --- MAIN CONTENT --- */
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--card-bg);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .search-bar {
+            position: relative;
+        }
+
+        .search-bar input {
+            padding: 8px 15px 8px 35px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            outline: none;
+            background-color: #f8f9fc;
+            width: 250px;
+        }
+
+        .search-bar i {
+            position: absolute;
+            left: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        .user-profile {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-profile img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Dashboard Body */
+        .dashboard-container {
+            padding: 30px;
+        }
+
+        /* FIXED HEADER BLOCK SPACING */
+        .dashboard-header-block {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: #e03b58;
+        }
+
+        /* KPI Cards Grid */
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .kpi-card.success { border-left-color: var(--success); }
+        .kpi-card.warning { border-left-color: var(--warning); }
+        .kpi-card.danger { border-left-color: var(--danger); }
+
+        .kpi-details p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .kpi-details h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+        }
+
+        .kpi-icon {
+            font-size: 1.8rem;
+            color: #dddfeb;
+        }
+
+        /* FIXED TABS AND FILTERS ALIGNMENT */
+        .filter-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: flex;
+            gap: 5px;
+        }
+
+        .tab-btn {
+            background: none;
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .tab-btn.active {
+            background-color: #f8f9fc;
+            font-weight: 600;
+        }
+
+        /* Management Panel */
+        .panel {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            border: 1px solid var(--border-color);
+        }
+
+        /* Data Table styling */
+        .data-table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        .data-table th, .data-table td {
+            padding: 14px 15px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.9rem;
+            vertical-align: middle;
+        }
+
+        .data-table th {
+            background-color: #f8f9fc;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        /* COLOR WRAPPED BADGES */
+        .status-badge {
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .status-badge.pending {
+            background-color: #fef5d1;
+            color: #856404;
+        }
+
+        .status-badge.paid {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .status-badge.overdue {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        /* ACTIONS ALIGNMENT & BUTTONS */
+        .action-actions {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-icon {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+
+        .btn-icon:hover {
+            color: var(--text-main);
+        }

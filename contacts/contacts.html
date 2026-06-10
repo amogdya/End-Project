@@ -1,0 +1,324 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="contacts.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div>
+            <div class="sidebar-brand">
+             <i class="fa-solid fa-chart-line" style="color: var(--accent-color); font-size: 1.5rem;"></i>
+                 <span>SerGiez</span>
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/End Project/index/index.html" ><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+                <li><a href="/End Project/sales/sales.html" ><i class="fa-solid fa-cart-shopping"></i> Sales & Orders</a></li>
+                <li><a href="/End Project/product/inventory.html" ><i class="fa-solid fa-tags"></i> Product & Inventory</a></li>
+                <li><a href="/End Project/invoice/invoice.html"><i class="fa-solid fa-file-invoice-dollar"></i> Invoices & Billing</a></li>
+                <li><a href="/End Project/contacts/contacts.html" class="active"><i class="fa-solid fa-address-book"></i> Contacts & Leads</a></li>
+                <li><a href="/End Project/reports/reports.html"><i class="fa-solid fa-chart-pie"></i> Reports & Analytics</a></li>
+            </ul>
+            </ul>
+        </div>
+        <div class="sidebar-footer">
+            <p>&copy; 2026 SalesOps Inc.</p>
+        </div>
+    </div>
+
+    <div class="main-content">
+        
+        <div class="header">
+            <div class="search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search contacts, emails...">
+            </div>
+            <div class="user-profile">
+                <i class="fa-regular fa-bell" style="font-size: 1.2rem; cursor: pointer; color: var(--text-muted);"></i>
+                <div style="text-align: right;">
+                    <h5 style="font-size: 0.9rem; font-weight: 600;">Sergie Gomez</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-muted);">Sales Manager</p>
+                </div>
+                <img src="/End Project/c92a8a61-e14b-4b45-af34-51f5da07412b.jpg" alt="User Profile Picture">
+            </div>
+        </div>
+
+        <div class="dashboard-container">
+            <div class="dashboard-title-row">
+                <div>
+                    <h2>Contacts Directory</h2>
+                    <p style="color: var(--text-muted); font-size: 0.9rem;">Manage leads, customers, and key stakeholder relationships.</p>
+                </div>
+                <button class="btn-primary">
+                    <i class="fa-solid fa-plus"></i> Add Contact
+                </button>
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-details">
+                        <p>Total Contacts</p>
+                        <h3>2,845</h3>
+                    </div>
+                    <i class="fa-solid fa-address-book kpi-icon"></i>
+                </div>
+                <div class="kpi-card success">
+                    <div class="kpi-details">
+                        <p>Active Customers</p>
+                        <h3>1,420</h3>
+                    </div>
+                    <i class="fa-solid fa-user-check kpi-icon"></i>
+                </div>
+                <div class="kpi-card warning">
+                    <div class="kpi-details">
+                        <p>New Leads</p>
+                        <h3>312</h3>
+                    </div>
+                    <i class="fa-solid fa-user-plus kpi-icon"></i>
+                </div>
+                <div class="kpi-card danger">
+                    <div class="kpi-details">
+                        <p>Unassigned</p>
+                        <h3>42</h3>
+                    </div>
+                    <i class="fa-solid fa-user-slash kpi-icon"></i>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h4 class="panel-title">All Contacts</h4>
+                    <button style="background: none; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 0.85rem; font-weight: 500;">Export CSV</button>
+                </div>
+
+                <div class="table-toolbar">
+                    <div class="filter-group">
+                        <select class="filter-select">
+                            <option value="">All Statuses</option>
+                            <option value="customer">Customer</option>
+                            <option value="lead">Lead</option>
+                            <option value="partner">Partner</option>
+                        </select>
+                        <select class="filter-select">
+                            <option value="">Sort By: Recently Added</option>
+                            <option value="name">Name</option>
+                            <option value="company">Company</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Contact Info</th>
+                                <th>Email</th>
+                                <th>Phone Number</th>
+                                <th>Deal Value</th>
+                                <th>Status</th>
+                                <th style="text-align: right;">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="User Profile Picture">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Flash Minus  </div>
+                                            <div class="contact-company">Viva Entertainment</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Flash@example.com</td>
+                                <td>+63 (555) 019-1111</td>
+                                <td><strong>$15,000.00</strong></td>
+                                <td><span class="status-badge partner">PArtner</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>   
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Supergirl </div>
+                                            <div class="contact-company">Senate of the Philippines</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Super@example.com</td>
+                                <td>+63 (555) 019-2222</td>
+                                <td><strong>$10,000.00</strong></td>
+                                <td><span class="status-badge partner">Partner</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Soreta</div>
+                                            <div class="contact-company">Liberal Party</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Soreta@example.com</td>
+                                <td>+63 (555) 019-3333</td>
+                                <td><strong>$35,000.00</strong></td>
+                                <td><span class="status-badge partner">Leads</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                               <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Robin Woody</div>
+                                            <div class="contact-company">ABS-CBN</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>Robin@example.com</td>
+                                <td>+63 (555) 019-4444</td>
+                                <td><strong>$45.00</strong></td>
+                                <td><span class="status-badge partner">Leads</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Darna Star</div>
+                                            <div class="contact-company">GMA Network</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>darna@example.com</td>
+                                <td>+63 (555) 019-5555</td>
+                                <td><strong>$28,500.00</strong></td>
+                                <td><span class="status-badge customer">Customer</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Captain Barbell</div>
+                                            <div class="contact-company">San Miguel Corp</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>captain@example.com</td>
+                                <td>+63 (555) 019-6666</td>
+                                <td><strong>$50,000.00</strong></td>
+                                <td><span class="status-badge partner">Partner</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Maria Clara</div>
+                                            <div class="contact-company">Cultural Center of the Phils</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>maria@example.com</td>
+                                <td>+63 (555) 019-7777</td>
+                                <td><strong>$8,200.00</strong></td>
+                                <td><span class="status-badge lead">Lead</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Juan Tamad</div>
+                                            <div class="contact-company">Bayantel Communications</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>juan@example.com</td>
+                                <td>+63 (555) 019-8888</td>
+                                <td><strong>$0.00</strong></td>
+                                <td><span class="status-badge unassigned">Unassigned</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Panday Iron</div>
+                                            <div class="contact-company">Steel Asia Corp</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>panday@example.com</td>
+                                <td>+63 (555) 019-9999</td>
+                                <td><strong>$120,500.00</strong></td>
+                                <td><span class="status-badge customer">Customer</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="contact-profile">
+                                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=100&q=80" alt="Contact Avatar">
+                                        <div class="contact-info">
+                                            <div class="contact-name">Ibong Adarna</div>
+                                            <div class="contact-company">Philippine Airlines</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>adarna@example.com</td>
+                                <td>+63 (555) 019-1234</td>
+                                <td><strong>$64,000.00</strong></td>
+                                <td><span class="status-badge partner">Partner</span></td>
+                                <td class="actions-cell" style="text-align: right;">
+                                    <button title="Edit"><i class="fa-solid fa-pen"></i></button>
+                                    <button title="Delete"><i class="fa-solid fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
