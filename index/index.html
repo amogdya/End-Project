@@ -50,51 +50,8 @@
 
         <div class="dashboard-container">
             <!-- Row 1: KPI Cards -->
-            <div class="kpi-grid">
-                <!-- Card 1 -->
-                <div class="kpi-card">
-                    <div class="kpi-details">
-                        <p>Total Revenue</p>
-                        <h3>$124,500</h3>
-                        <div class="kpi-subtext" style="color: var(--success);">
-                            <i class="fa-solid fa-arrow-trend-up"></i> +14.5% vs last month
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-wallet kpi-icon"></i>
-                </div>
-                <!-- Card 2 -->
-                <div class="kpi-card success">
-                    <div class="kpi-details">
-                        <p>New Customers</p>
-                        <h3>842</h3>
-                        <div class="kpi-subtext" style="color: var(--text-muted);">
-                            <i class="fa-solid fa-user-plus"></i> +38 new this week
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-users-rays kpi-icon"></i>
-                </div>
-                <!-- Card 3 -->
-                <div class="kpi-card warning">
-                    <div class="kpi-details">
-                        <p>Pending Orders</p>
-                        <h3>16</h3>
-                        <div style="margin-top: 10px;">
-                            <button class="btn-action">Review</button>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-box-open kpi-icon"></i>
-                </div>
-                <!-- Card 4 -->
-                <div class="kpi-card danger">
-                    <div class="kpi-details">
-                        <p>Low Stock Alerts</p>
-                        <h3>5 Items</h3>
-                        <div style="margin-top: 10px;">
-                            <button class="btn-action">View Inventory</button>
-                        </div>
-                    </div>
-                    <i class="fa-solid fa-triangle-exclamation kpi-icon"></i>
-                </div>
+            <div class="kpi-grid" id="dashboardKPIContainer">
+                <!-- KPI cards will be populated by JavaScript -->
             </div>
 
             <!-- Row 2: Visual Data -->
@@ -107,28 +64,8 @@
                             <option value="monthly" selected>Monthly Breakdown</option>
                         </select>
                     </div>
-                    <div class="simple-stats-container">
-                        <div class="stat-row">
-                            <div class="stat-info">
-                                <span class="stat-label">Online Sales</span>
-                                <span class="stat-value">$75,000</span>
-                            </div>
-                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 60%; background-color: var(--accent-color);"></div></div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-info">
-                                <span class="stat-label">Retail Stores</span>
-                                <span class="stat-value">$35,000</span>
-                            </div>
-                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 28%; background-color: #2e59d9;"></div></div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-info">
-                                <span class="stat-label">Partnerships</span>
-                                <span class="stat-value">$14,500</span>
-                            </div>
-                            <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 12%; background-color: var(--success);"></div></div>
-                        </div>
+                    <div class="simple-stats-container" id="revenueOverviewContainer">
+                        <!-- Revenue stats will be populated by JavaScript -->
                     </div>
                 </div>
 
@@ -137,43 +74,8 @@
                     <div class="panel-header">
                         <h4 class="panel-title">New Customer Conversion</h4>
                     </div>
-                    <ul class="metric-list">
-                        <li>
-                            <div class="metric-icon" style="background-color: rgba(255, 77, 109, 0.1); color: var(--accent-color);">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                            </div>
-                            <div class="metric-text">
-                                <strong>1,200</strong>
-                                <span>Initial Contacts</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="metric-icon" style="background-color: rgba(28, 200, 138, 0.1); color: var(--success);">
-                                <i class="fa-solid fa-user-check"></i>
-                            </div>
-                            <div class="metric-text">
-                                <strong>800</strong>
-                                <span>New Customers</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="metric-icon" style="background-color: rgba(246, 194, 62, 0.1); color: var(--warning);">
-                                <i class="fa-solid fa-file-signature"></i>
-                            </div>
-                            <div class="metric-text">
-                                <strong>400</strong>
-                                <span>Quotes Sent</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="metric-icon" style="background-color: #e2f0fd; color: #2e59d9;">
-                                <i class="fa-solid fa-handshake"></i>
-                            </div>
-                            <div class="metric-text">
-                                <strong>150</strong>
-                                <span>Closed Deals</span>
-                            </div>
-                        </li>
+                    <ul class="metric-list" id="conversionMetricsContainer">
+                        <!-- Conversion metrics will be populated by JavaScript -->
                     </ul>
                 </div>
             </div>
@@ -195,37 +97,8 @@
                                     <th>Status</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#ORD-8012</td>
-                                    <td>Wayne Enterprises</td>
-                                    <td>$4,500.00</td>
-                                    <td><span class="status-badge shipped">Shipped</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-8013</td>
-                                    <td>Stark Industries</td>
-                                    <td>$12,000.00</td>
-                                    <td><span class="status-badge processing">Processing</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-8014</td>
-                                    <td>Oscorp Inc.</td>
-                                    <td>$850.00</td>
-                                    <td><span class="status-badge pending">Pending</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-8015</td>
-                                    <td>Daily Bugle</td>
-                                    <td>$3,200.00</td>
-                                    <td><span class="status-badge shipped">Shipped</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-8016</td>
-                                    <td>Goliath National</td>
-                                    <td>$1,150.00</td>
-                                    <td><span class="status-badge pending">Pending</span></td>
-                                </tr>
+                            <tbody id="recentOrdersTableBody">
+                                <!-- Recent orders will be populated by JavaScript -->
                             </tbody>
                         </table>
                     </div>
@@ -243,24 +116,98 @@
                         <button class="btn-primary" style="padding: 10px 15px;"><i class="fa-solid fa-plus"></i></button>
                     </div>
 
-                    <div class="task-list">
-                        <label class="task-item">
-                            <input type="checkbox"> Call John Doe regarding quote
-                        </label>
-                        <label class="task-item">
-                            <input type="checkbox"> Approve discount for ABC Corp.
-                        </label>
-                        <label class="task-item">
-                            <input type="checkbox" checked> Follow up on Q2 projections
-                        </label>
-                        <label class="task-item">
-                            <input type="checkbox"> Review low stock alerts with procurement
-                        </label>
+                    <div class="task-list" id="tasksContainer">
+                        <!-- Tasks will be populated by JavaScript -->
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- Data and rendering scripts -->
+    <script src="dashboard-data.js"></script>
+    <script>
+        // Populate KPI Cards
+        function populateDashboardKPIs() {
+            const container = document.getElementById('dashboardKPIContainer');
+            container.innerHTML = dashboardKPIData.map(kpi => {
+                const trendHtml = kpi.trend ? `<div class="kpi-subtext" style="color: var(--success);"><i class="fa-solid fa-arrow-trend-up"></i> ${kpi.trend}</div>` : '';
+                const buttonHtml = kpi.button ? `<div style="margin-top: 10px;"><button class="btn-action">${kpi.button}</button></div>` : '';
+                return `
+                    <div class="kpi-card ${kpi.type === 'default' ? '' : kpi.type}">
+                        <div class="kpi-details">
+                            <p>${kpi.label}</p>
+                            <h3>${kpi.value}</h3>
+                            ${trendHtml}${buttonHtml}
+                        </div>
+                        <i class="fa-solid ${kpi.icon} kpi-icon"></i>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Populate Revenue Overview
+        function populateRevenueOverview() {
+            const container = document.getElementById('revenueOverviewContainer');
+            container.innerHTML = revenueOverviewData.map(stat => `
+                <div class="stat-row">
+                    <div class="stat-info">
+                        <span class="stat-label">${stat.label}</span>
+                        <span class="stat-value">${stat.value}</span>
+                    </div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: ${stat.percentage}%; background-color: ${stat.color};"></div></div>
+                </div>
+            `).join('');
+        }
+
+        // Populate Conversion Metrics
+        function populateConversionMetrics() {
+            const container = document.getElementById('conversionMetricsContainer');
+            container.innerHTML = conversionMetricsData.map(metric => `
+                <li>
+                    <div class="metric-icon" style="background-color: ${metric.bgColor}; color: ${metric.iconColor};">
+                        <i class="fa-solid ${metric.icon}"></i>
+                    </div>
+                    <div class="metric-text">
+                        <strong>${metric.value}</strong>
+                        <span>${metric.label}</span>
+                    </div>
+                </li>
+            `).join('');
+        }
+
+        // Populate Recent Orders
+        function populateRecentOrders() {
+            const tbody = document.getElementById('recentOrdersTableBody');
+            tbody.innerHTML = recentOrdersData.map(order => `
+                <tr>
+                    <td>${order.orderId}</td>
+                    <td>${order.customerName}</td>
+                    <td>${order.amount}</td>
+                    <td><span class="status-badge ${order.status.toLowerCase()}">${order.status}</span></td>
+                </tr>
+            `).join('');
+        }
+
+        // Populate Tasks
+        function populateTasks() {
+            const container = document.getElementById('tasksContainer');
+            container.innerHTML = tasksData.map(task => `
+                <label class="task-item">
+                    <input type="checkbox" ${task.completed ? 'checked' : ''}> ${task.text}
+                </label>
+            `).join('');
+        }
+
+        // Initialize all dashboard elements
+        document.addEventListener('DOMContentLoaded', () => {
+            populateDashboardKPIs();
+            populateRevenueOverview();
+            populateConversionMetrics();
+            populateRecentOrders();
+            populateTasks();
+        });
+    </script>
 </body>
 </html>

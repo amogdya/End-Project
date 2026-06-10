@@ -69,50 +69,8 @@
             </div>
 
             <!-- Analytical Structured Grid Layout -->
-            <div class="analytics-summary-grid">
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>Gross Revenue</span>
-                        <div class="metric-icon-box"><i class="fa-solid fa-wallet"></i></div>
-                    </div>
-                    <div class="metric-value">$93,420.00</div>
-                    <div class="metric-trend trend-up">
-                        <i class="fa-solid fa-arrow-trend-up"></i> <span>+12.4% vs last month</span>
-                    </div>
-                </div>
-
-                <div class="metric-card success">
-                    <div class="metric-header">
-                        <span>Conversion Rate</span>
-                        <div class="metric-icon-box"><i class="fa-solid fa-arrow-pointer"></i></div>
-                    </div>
-                    <div class="metric-value">4.28%</div>
-                    <div class="metric-trend trend-up">
-                        <i class="fa-solid fa-arrow-trend-up"></i> <span>+0.6% variance</span>
-                    </div>
-                </div>
-
-                <div class="metric-card warning">
-                    <div class="metric-header">
-                        <span>Avg Order Value</span>
-                        <div class="metric-icon-box"><i class="fa-solid fa-basket-shopping"></i></div>
-                    </div>
-                    <div class="metric-value">$342.50</div>
-                    <div class="metric-trend trend-down">
-                        <i class="fa-solid fa-arrow-trend-down"></i> <span>-1.8% dropoff</span>
-                    </div>
-                </div>
-
-                <div class="metric-card">
-                    <div class="metric-header">
-                        <span>Active Pipeline</span>
-                        <div class="metric-icon-box"><i class="fa-solid fa-arrow-up-right-dots"></i></div>
-                    </div>
-                    <div class="metric-value">18 Active</div>
-                    <div class="metric-trend trend-up">
-                        <i class="fa-solid fa-arrow-trend-up"></i> <span>4 deals added late</span>
-                    </div>
-                </div>
+            <div class="analytics-summary-grid" id="analyticsMetricsContainer">
+                <!-- Analytics metrics will be populated by JavaScript -->
             </div>
 
             <!-- Double Column Analytical Layout Row -->
@@ -124,14 +82,8 @@
                         <h4>Monthly Financial Performance Overview</h4>
                         <i class="fa-solid fa-ellipsis" style="color: var(--text-muted); cursor: pointer;"></i>
                     </div>
-                    <div class="mock-bar-chart">
-                        <!-- Bar Charts Built via CSS Flexbox Heights matching the theme variables -->
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 45%;"></div><div class="bar-label">Jan</div></div>
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 60%;"></div><div class="bar-label">Feb</div></div>
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 52%;"></div><div class="bar-label">Mar</div></div>
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 78%;"></div><div class="bar-label">Apr</div></div>
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 88%;"></div><div class="bar-label">May</div></div>
-                        <div class="bar-wrapper"><div class="bar-growth" style="height: 95%;"></div><div class="bar-label">Jun</div></div>
+                    <div class="mock-bar-chart" id="monthlyPerformanceChart">
+                        <!-- Bar charts will be populated by JavaScript -->
                     </div>
                 </div>
 
@@ -147,10 +99,8 @@
                                 <h5>24.8k</h5>
                             </div>
                         </div>
-                        <div class="donut-legend">
-                            <div class="legend-item"><span class="dot" style="background-color: var(--accent-color);"></span> Direct</div>
-                            <div class="legend-item"><span class="dot" style="background-color: var(--success);"></span> Referral</div>
-                            <div class="legend-item"><span class="dot" style="background-color: var(--warning);"></span> Organic</div>
+                        <div class="donut-legend" id="acquisitionLegend">
+                            <!-- Legend items will be populated by JavaScript -->
                         </div>
                     </div>
                 </div>
@@ -172,40 +122,8 @@
                                 <th>Target Conversion Share</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td><strong>Enterprise CRM Suite Modules</strong></td>
-                                <td>142 Licenses</td>
-                                <td>$42,600.00</td>
-                                <td>
-                                    <div class="badge-progress-container">
-                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 82%;"></div></div>
-                                        <span>82%</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>B2B Operations Optimization Kits</strong></td>
-                                <td>98 Bundles</td>
-                                <td>$29,400.00</td>
-                                <td>
-                                    <div class="badge-progress-container">
-                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 64%; background-color: var(--accent-color);"></div></div>
-                                        <span>64%</span>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><strong>Inventory Middleware API Pipelines</strong></td>
-                                <td>45 Extensions</td>
-                                <td>$13,500.00</td>
-                                <td>
-                                    <div class="badge-progress-container">
-                                        <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 41%; background-color: var(--warning);"></div></div>
-                                        <span>41%</span>
-                                    </div>
-                                </td>
-                            </tr>
+                        <tbody id="topProductsTableBody">
+                            <!-- Top products will be populated by JavaScript -->
                         </tbody>
                     </table>
                 </div>
@@ -214,5 +132,77 @@
         </div>
     </div>
 
+    <!-- Data and rendering scripts -->
+    <script src="reports-data.js"></script>
+    <script>
+        // Populate Analytics Metrics
+        function populateAnalyticsMetrics() {
+            const container = document.getElementById('analyticsMetricsContainer');
+            container.innerHTML = analyticsMetricsData.map(metric => {
+                const trendClass = metric.trendType === 'up' ? 'trend-up' : 'trend-down';
+                const trendIcon = metric.trendType === 'up' ? 'fa-arrow-trend-up' : 'fa-arrow-trend-down';
+                return `
+                    <div class="metric-card ${metric.type === 'default' ? '' : metric.type}">
+                        <div class="metric-header">
+                            <span>${metric.label}</span>
+                            <div class="metric-icon-box"><i class="fa-solid ${metric.icon}"></i></div>
+                        </div>
+                        <div class="metric-value">${metric.value}</div>
+                        <div class="metric-trend ${trendClass}">
+                            <i class="fa-solid ${trendIcon}"></i> <span>${metric.trend}</span>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // Populate Monthly Performance Chart
+        function populateMonthlyPerformance() {
+            const container = document.getElementById('monthlyPerformanceChart');
+            container.innerHTML = monthlyPerformanceData.map(data => `
+                <div class="bar-wrapper"><div class="bar-growth" style="height: ${data.percentage}%;"></div><div class="bar-label">${data.month}</div></div>
+            `).join('');
+        }
+
+        // Populate Acquisition Legend
+        function populateAcquisitionLegend() {
+            const container = document.getElementById('acquisitionLegend');
+            container.innerHTML = acquisitionSplitData.map(item => `
+                <div class="legend-item"><span class="dot" style="background-color: ${item.color};"></span> ${item.label}</div>
+            `).join('');
+        }
+
+        // Populate Top Products Table
+        function populateTopProducts() {
+            const tbody = document.getElementById('topProductsTableBody');
+            tbody.innerHTML = topProductSalesData.map(product => {
+                let barColor = 'var(--accent-color)';
+                if (product.percentage <= 50) {
+                    barColor = 'var(--warning)';
+                }
+                return `
+                    <tr>
+                        <td><strong>${product.productName}</strong></td>
+                        <td>${product.units}</td>
+                        <td>${product.revenue}</td>
+                        <td>
+                            <div class="badge-progress-container">
+                                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: ${product.percentage}%; background-color: ${barColor};"></div></div>
+                                <span>${product.percentage}%</span>
+                            </div>
+                        </td>
+                    </tr>
+                `;
+            }).join('');
+        }
+
+        // Initialize reports page
+        document.addEventListener('DOMContentLoaded', () => {
+            populateAnalyticsMetrics();
+            populateMonthlyPerformance();
+            populateAcquisitionLegend();
+            populateTopProducts();
+        });
+    </script>
 </body>
 </html>
