@@ -52,106 +52,112 @@
             <!-- Row 1: Header -->
             <div class="dashboard-title-row">
                 <h2>Create New Order</h2>
-                <div style="display: flex; gap: 10px;">
-                    <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-arrow-left"></i> Back to Orders</a>
+                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                    <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-arrow-left"></i> <span class="link-text">Back to Orders</span></a>
                 </div>
             </div>
 
             <!-- Order Form -->
             <div class="panel">
-                <form id="createOrderForm" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px;">
+                <form id="createOrderForm" class="order-form">
                     <!-- Customer Information -->
-                    <div style="grid-column: 1 / -1;">
-                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Customer Information</h3>
-                    </div>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Customer Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerName">Customer Name *</label>
+                                <input type="text" id="customerName" name="customerName" required placeholder="Enter customer name" class="form-control">
+                            </div>
 
-                    <div>
-                        <label for="customerName">Customer Name *</label>
-                        <input type="text" id="customerName" name="customerName" required placeholder="Enter customer name">
-                    </div>
+                            <div class="form-group">
+                                <label for="customerEmail">Email Address *</label>
+                                <input type="email" id="customerEmail" name="customerEmail" required placeholder="customer@example.com" class="form-control">
+                            </div>
+                        </div>
 
-                    <div>
-                        <label for="customerEmail">Email Address *</label>
-                        <input type="email" id="customerEmail" name="customerEmail" required placeholder="customer@example.com">
-                    </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customerPhone">Phone Number</label>
+                                <input type="tel" id="customerPhone" name="customerPhone" placeholder="(555) 123-4567" class="form-control">
+                            </div>
 
-                    <div>
-                        <label for="customerPhone">Phone Number</label>
-                        <input type="tel" id="customerPhone" name="customerPhone" placeholder="(555) 123-4567">
-                    </div>
-
-                    <div>
-                        <label for="customerAddress">Address</label>
-                        <input type="text" id="customerAddress" name="customerAddress" placeholder="Street address">
+                            <div class="form-group">
+                                <label for="customerAddress">Address</label>
+                                <input type="text" id="customerAddress" name="customerAddress" placeholder="Street address" class="form-control">
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Order Details -->
-                    <div style="grid-column: 1 / -1; margin-top: 20px;">
-                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Order Details</h3>
-                    </div>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Order Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="orderDate">Order Date *</label>
+                                <input type="date" id="orderDate" name="orderDate" required class="form-control">
+                            </div>
 
-                    <div>
-                        <label for="orderDate">Order Date *</label>
-                        <input type="date" id="orderDate" name="orderDate" required>
-                    </div>
+                            <div class="form-group">
+                                <label for="salesRep">Sales Representative *</label>
+                                <select id="salesRep" name="salesRep" required class="form-control">
+                                    <option value="">-- Select Sales Rep --</option>
+                                    <option value="alex">Alex Mercer</option>
+                                    <option value="sarah">Sarah Jenkins</option>
+                                    <option value="sergie">Sergie Gomez</option>
+                                </select>
+                            </div>
+                        </div>
 
-                    <div>
-                        <label for="salesRep">Sales Representative *</label>
-                        <select id="salesRep" name="salesRep" required>
-                            <option value="">-- Select Sales Rep --</option>
-                            <option value="alex">Alex Mercer</option>
-                            <option value="sarah">Sarah Jenkins</option>
-                            <option value="sergie">Sergie Gomez</option>
-                        </select>
-                    </div>
-
-                    <div style="grid-column: 1 / -1;">
-                        <label for="orderNotes">Order Notes</label>
-                        <textarea id="orderNotes" name="orderNotes" placeholder="Add any special instructions or notes..." style="width: 100%; min-height: 80px; padding: 10px; border: 1px solid var(--border-color); border-radius: 5px; font-family: Arial, sans-serif;"></textarea>
+                        <div class="form-group full-width">
+                            <label for="orderNotes">Order Notes</label>
+                            <textarea id="orderNotes" name="orderNotes" placeholder="Add any special instructions or notes..." class="form-control" style="min-height: 80px; resize: vertical;"></textarea>
+                        </div>
                     </div>
 
                     <!-- Payment Information -->
-                    <div style="grid-column: 1 / -1; margin-top: 20px;">
-                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Payment Information</h3>
-                    </div>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Payment Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="totalAmount">Total Amount *</label>
+                                <input type="number" id="totalAmount" name="totalAmount" required placeholder="0.00" step="0.01" class="form-control">
+                            </div>
 
-                    <div>
-                        <label for="totalAmount">Total Amount *</label>
-                        <input type="number" id="totalAmount" name="totalAmount" required placeholder="0.00" step="0.01">
-                    </div>
-
-                    <div>
-                        <label for="paymentStatus">Payment Status *</label>
-                        <select id="paymentStatus" name="paymentStatus" required>
-                            <option value="">-- Select Status --</option>
-                            <option value="paid">Paid</option>
-                            <option value="unpaid">Unpaid</option>
-                            <option value="partial">Partial</option>
-                        </select>
+                            <div class="form-group">
+                                <label for="paymentStatus">Payment Status *</label>
+                                <select id="paymentStatus" name="paymentStatus" required class="form-control">
+                                    <option value="">-- Select Status --</option>
+                                    <option value="paid">Paid</option>
+                                    <option value="unpaid">Unpaid</option>
+                                    <option value="partial">Partial</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Fulfillment Status -->
-                    <div style="grid-column: 1 / -1; margin-top: 20px;">
-                        <h3 style="margin-bottom: 15px; color: var(--text-primary);">Fulfillment Status</h3>
-                    </div>
-
-                    <div>
-                        <label for="fulfillmentStatus">Status *</label>
-                        <select id="fulfillmentStatus" name="fulfillmentStatus" required>
-                            <option value="">-- Select Status --</option>
-                            <option value="draft">Draft</option>
-                            <option value="processing">Processing</option>
-                            <option value="shipped">Shipped</option>
-                            <option value="delivered">Delivered</option>
-                            <option value="cancelled">Cancelled</option>
-                        </select>
+                    <div class="form-section">
+                        <h3 class="form-section-title">Fulfillment Status</h3>
+                        <div class="form-row">
+                            <div class="form-group full-width">
+                                <label for="fulfillmentStatus">Status *</label>
+                                <select id="fulfillmentStatus" name="fulfillmentStatus" required class="form-control">
+                                    <option value="">-- Select Status --</option>
+                                    <option value="draft">Draft</option>
+                                    <option value="processing">Processing</option>
+                                    <option value="shipped">Shipped</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Form Actions -->
-                    <div style="grid-column: 1 / -1; margin-top: 30px; display: flex; gap: 10px; justify-content: flex-end;">
-                        <button type="reset" class="btn-action"><i class="fa-solid fa-redo"></i> Clear Form</button>
-                        <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-times"></i> Cancel</a>
-                        <button type="submit" class="btn-primary"><i class="fa-solid fa-save"></i> Create Order</button>
+                    <div class="form-actions">
+                        <button type="reset" class="btn-action"><i class="fa-solid fa-redo"></i> <span class="link-text">Clear Form</span></button>
+                        <a href="sales-orders.html" class="btn-action"><i class="fa-solid fa-times"></i> <span class="link-text">Cancel</span></a>
+                        <button type="submit" class="btn-primary"><i class="fa-solid fa-save"></i> <span class="link-text">Create Order</span></button>
                     </div>
                 </form>
             </div>
